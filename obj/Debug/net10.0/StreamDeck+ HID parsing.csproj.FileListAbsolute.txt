@@ -1,17 +1,35 @@
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.exe
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.deps.json
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.runtimeconfig.json
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.pdb
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\HidSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.csproj.AssemblyReference.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.AssemblyInfoInputs.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.AssemblyInfo.cs
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.csproj.CoreCompileInputs.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDe.910CB6ED.Up2Date
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\refint\StreamDeck+ HID parsing.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.pdb
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.genruntimeconfig.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\ref\StreamDeck+ HID parsing.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.exe
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.deps.json
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.runtimeconfig.json
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.pdb
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/HidSharp.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.csproj.AssemblyReference.cache
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.AssemblyInfoInputs.cache
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.AssemblyInfo.cs
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.csproj.CoreCompileInputs.cache
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDe.910CB6ED.Up2Date
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/refint/StreamDeck+ HID parsing.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.pdb
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.genruntimeconfig.cache
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/ref/StreamDeck+ HID parsing.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/StreamDeck+ HID parsing
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.deps.json
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.runtimeconfig.json
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/StreamDeck+ HID parsing.pdb
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/HidSharp.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.csproj.AssemblyReference.cache
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.GeneratedMSBuildEditorConfig.editorconfig
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.AssemblyInfoInputs.cache
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.AssemblyInfo.cs
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.csproj.CoreCompileInputs.cache
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.sourcelink.json
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDe.910CB6ED.Up2Date
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/refint/StreamDeck+ HID parsing.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.pdb
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.genruntimeconfig.cache
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/ref/StreamDeck+ HID parsing.dll

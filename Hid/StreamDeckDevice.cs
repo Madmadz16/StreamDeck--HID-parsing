@@ -41,9 +41,7 @@ namespace StreamDeckCarControl.Hid
                     if (bytesRead > 0)
                     {
                         _parser.ParseReport(buffer);
-                
-
-                 }
+                    }
                 }
             });
 

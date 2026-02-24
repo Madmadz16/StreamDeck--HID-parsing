@@ -28,7 +28,7 @@ namespace StreamDeckCarControl.Hid
             switch (type)
             {
                 case 0x03:
-                    ParseKnob(report, lastIndex, last);
+                    ParseKnob(report);
                     break;
                 case 0x00:
                     //ParseButton(report, lastIndex, last);
@@ -39,37 +39,29 @@ namespace StreamDeckCarControl.Hid
             }
         }
 
-        private void ParseKnob(byte[] report, int lastIndex, byte last)
+        private void ParseKnob(byte[] report)
         {
-            // Count consecutive 0x00 backwards before last byte
-            int zeroCount = 0;
-            for (int i = lastIndex - 1; i >= 0; i--)
+            byte[] trimmed = [.. report.Reverse()
+                .SkipWhile(b => b == 0x00)
+                .Reverse()];
+            
+            // Need at least 5 bytes to have data after skipping the header (01-03-05-00)
+            if (trimmed.Length < 5) return;
+            
+            byte[] data = trimmed[4..];
+            
+            // Click handling
+            if (data[0] == 0x00)
             {
-                if (report[i] == 0x00) zeroCount++;
-                else break;
-            }
-
-            int knobIndex = zeroCount;
-            if (knobIndex < 0 || knobIndex > 3) return;
-
-            // Rotation handling
-            if (last == 0x01)
-            {
-                EncoderRotated?.Invoke(knobIndex, 1);
-            }
-            else if (last == 0xFF)
-            {
-                EncoderRotated?.Invoke(knobIndex, -1);
-            }
-            else
-            {
-                // Press handling: only fire if last byte is exactly 0x01 in the press position
-                // The press position is always the last byte when rotation is 0
-                bool pressed = last != 0x00;
-                if (_encoderPressed[knobIndex] != pressed)
+                EncoderPressed?.Invoke(data.Length-2, true);
+            } else {
+                // Rotation handling
+                if (data[^1] < 255/2)
                 {
-                    _encoderPressed[knobIndex] = pressed;
-                    EncoderPressed?.Invoke(knobIndex, pressed);
+                    EncoderRotated?.Invoke(data.Length-2, data[^1]);
+                } else {
+                    EncoderRotated?.Invoke(data.Length-2, data[^1]-256);
+
                 }
             }
         }

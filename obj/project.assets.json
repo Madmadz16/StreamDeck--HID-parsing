@@ -91,31 +91,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mftha\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/madmadz16/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mftha\\source\\repos\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing.csproj",
+      "projectUniqueName": "/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/StreamDeck+ HID parsing.csproj",
       "projectName": "StreamDeck+ HID parsing",
-      "projectPath": "C:\\Users\\mftha\\source\\repos\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing.csproj",
-      "packagesPath": "C:\\Users\\mftha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mftha\\source\\repos\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing\\obj\\",
+      "projectPath": "/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/StreamDeck+ HID parsing.csproj",
+      "packagesPath": "/home/madmadz16/.nuget/packages/",
+      "outputPath": "/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mftha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/madmadz16/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/lib/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -165,7 +159,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
