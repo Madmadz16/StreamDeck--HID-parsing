@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 namespace StreamDeckCarControl.Hid
 {
@@ -21,8 +21,6 @@ namespace StreamDeckCarControl.Hid
 
             if (lastIndex < 1) return;
 
-            byte last = report[lastIndex];
-
             byte type = report[1];
 
             switch (type)
@@ -31,25 +29,30 @@ namespace StreamDeckCarControl.Hid
                     ParseKnob(report);
                     break;
                 case 0x00:
-                    //ParseButton(report, lastIndex, last);
+                    ParseButton(report);
                     break;
                 case 0x02:
-                    //ParseStrip(report, lastIndex, last);
+                    //ParseStrip(report);
                     break;
             }
         }
 
-        private void ParseKnob(byte[] report)
-        {
+        static private byte[] TrimBytes(byte[] report, int toTrim) {
             byte[] trimmed = [.. report.Reverse()
                 .SkipWhile(b => b == 0x00)
                 .Reverse()];
-            
+
             // Need at least 5 bytes to have data after skipping the header (01-03-05-00)
-            if (trimmed.Length < 5) return;
-            
-            byte[] data = trimmed[4..];
-            
+            if (trimmed.Length < 5) return [];
+
+            byte[] data = trimmed[toTrim..];
+            return data;
+        }
+        private void ParseKnob(byte[] report)
+        {
+            byte[] data = TrimBytes(report, 4);
+            if (data.Length == 0) return;
+
             // Click handling
             if (data[0] == 0x00)
             {
@@ -66,29 +69,21 @@ namespace StreamDeckCarControl.Hid
             }
         }
 
-        //private void ParseButton(byte[] report, int lastIndex, byte last)
-        //{
-        //    // Determine index: first non-zero byte after byte 4
-        //    int index = -1;
-        //    for (int i = 4; i < report.Length; i++)
-        //    {
-        //        if (report[i] != 0)
-        //        {
-        //            index = i - 4; // maps to button 0..n
-        //            break;
-        //        }
-        //    }
-        //    if (index == -1) return;
+        private void ParseButton(byte[] report)
+        {
+            byte[] data = TrimBytes(report, 4);
+            if (data.Length == 0) return;
 
-        //    bool pressed = report[4 + index] != 0;
-        //    if (_buttonPressed[index] != pressed)
-        //    {
-        //        _buttonPressed[index] = pressed;
-        //        ButtonPressed?.Invoke(index, pressed);
-        //    }
-        //}
+            Console.WriteLine(string.Join("-", data.Select(b => b.ToString("X2"))));
+            //    bool pressed = report[4 + index] != 0;
+            //    if (_buttonPressed[index] != pressed)
+            //    {
+            //        _buttonPressed[index] = pressed;
+            //        ButtonPressed?.Invoke(index, pressed);
+            //    }
+        }
 
-        //private void ParseStrip(byte[] report, int lastIndex, byte last)
+        //private void ParseStrip(byte[] report)
         //{
         //    int index = report.Length > 4 ? report[4] : 0;
         //    if (!_stripClicked[index])
@@ -138,7 +133,7 @@ Button 3:
 01-00-08-00-00-00-00-00-00-00-00-00 // Release
 
 Button 4:
-01-00-08-00-00-00-01-00-00-00-00-00 // Click
+01-00-08-00-00-00-00-01-00-00-00-00 // Click
 01-00-08-00-00-00-00-00-00-00-00-00 // Release
 
 Button 5:

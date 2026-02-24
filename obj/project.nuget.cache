@@ -1,20 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "9ComPD7egtM=",
+  "dgSpecHash": "LYBNfvh41nQ=",
   "success": true,
-  "projectFilePath": "/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/StreamDeck+ HID parsing.csproj",
+  "projectFilePath": "C:\\Users\\mftha\\source\\repos\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing.csproj",
   "expectedPackageFiles": [
-    "/home/madmadz16/.nuget/packages/hidsharp/2.6.4/hidsharp.2.6.4.nupkg.sha512",
-    "/home/madmadz16/.nuget/packages/system.net.http.json/10.0.3/system.net.http.json.10.0.3.nupkg.sha512"
+    "C:\\Users\\mftha\\.nuget\\packages\\hidsharp\\2.6.4\\hidsharp.2.6.4.nupkg.sha512",
+    "C:\\Users\\mftha\\.nuget\\packages\\system.net.http.json\\10.0.3\\system.net.http.json.10.0.3.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference System.Net.Http.Json will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/StreamDeck+ HID parsing.csproj",
+      "projectPath": "C:\\Users\\mftha\\source\\repos\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing.csproj",
       "warningLevel": 1,
-      "filePath": "/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/StreamDeck+ HID parsing.csproj",
+      "filePath": "C:\\Users\\mftha\\source\\repos\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing\\StreamDeck+ HID parsing.csproj",
       "libraryId": "System.Net.Http.Json",
       "targetGraphs": [
         "net10.0"
