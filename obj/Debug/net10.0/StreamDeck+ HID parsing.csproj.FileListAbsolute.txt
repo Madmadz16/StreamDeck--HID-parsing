@@ -34,3 +34,9 @@ C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/
 /home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.genruntimeconfig.cache
 /home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/obj/Debug/net10.0/ref/StreamDeck+ HID parsing.dll
 C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/Debug/net10.0/StreamDeck+ HID parsing.sourcelink.json
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/Microsoft.Win32.SystemEvents.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/System.Drawing.Common.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/System.Private.Windows.Core.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/System.Private.Windows.GdiPlus.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/runtimes/win/lib/net10.0/Microsoft.Win32.SystemEvents.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/SixLabors.ImageSharp.dll

@@ -7,8 +7,11 @@ namespace StreamDeckCarControl.Hid
 {
     public class StreamDeckDevice : IDisposable
     {
-        private readonly HidDevice _device;
+        private HidDevice _device;
+        public HidDevice Device => _device;
+
         private readonly HidStream _stream;
+        public HidStream Stream => _stream;
         private readonly ReportParser _parser;
 
         // Expose parser publicly so you can subscribe to its events
@@ -20,11 +23,8 @@ namespace StreamDeckCarControl.Hid
 
             _device = DeviceList.Local
                 .GetHidDevices(vID)
-                .FirstOrDefault(d => d.ProductName.Contains("Stream Deck"));
-
-            if (_device == null)
-                throw new Exception("Stream Deck not found.");
-
+                .FirstOrDefault(d => d.ProductName.Contains("Stream Deck")) ?? throw new Exception("Stream Deck not found.");
+            
             if (!_device.TryOpen(out _stream))
                 throw new Exception("Failed to open Stream Deck device.");
         }

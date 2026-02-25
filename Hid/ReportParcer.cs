@@ -7,9 +7,9 @@ namespace StreamDeckCarControl.Hid
         private readonly bool[] _knobPressed = new bool[4];
         private readonly bool[] _buttonPressed = new bool[8];
 
-        public event Action<int, int> KnobRotated;
-        public event Action<int, bool> KnobPressed;
-        public event Action<int, bool> ButtonPressed;
+        public event Action<int, int>? KnobRotated;
+        public event Action<int, bool>? KnobPressed;
+        public event Action<int, bool>? ButtonPressed;
         public event Action<int, int, int>? StripTapped;
         public event Action<int, int, int>? StripLongPressed;
         public event Action<int, int, int, int>? StripDragged;
@@ -162,73 +162,3 @@ namespace StreamDeckCarControl.Hid
         }
     }
 }
-
-/*
- * knob 1:
-01-03-05-00-01-01-00-00-00 // Clockwise
-01-03-05-00-01-FF-00-00-00 // Counterclockwise
-01-03-05-00-00-01-00-00-00 // Click
-01-03-05 //Release
-
-knob 2:
-01-03-05-00-01-00-01-00-00 // Clockwise
-01-03-05-00-01-00-FF-00-00 // Counterclockwise
-01-03-05-00-00-00-01-00-00 // Click
-01-03-05 //Release
-
-knob 3:
-01-03-05-00-01-00-00-01-00 // Clockwise
-01-03-05-00-01-00-00-FF-00 // Counterclockwise
-01-03-05-00-00-00-00-01-00 // Click
-01-03-05 //Release
-
-knob 4:
-01-03-05-00-01-00-00-00-01 // Clockwise
-01-03-05-00-01-00-00-00-FF // Counterclockwise
-01-03-05-00-00-00-00-00-01 // Click
-01-03-05 //Release
-
-Button 1:
-01-00-08-00-01-00-00-00-00-00-00-00 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Button 2:
-01-00-08-00-00-01-00-00-00-00-00-00 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Button 3:
-01-00-08-00-00-00-01-00-00-00-00-00 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Button 4:
-01-00-08-00-00-00-00-01-00-00-00-00 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Button 5:
-01-00-08-00-00-00-00-00-01-00-00-00 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Button 6:
-01-00-08-00-00-00-00-00-00-01-00-00 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Button 7:
-01-00-08-00-00-00-00-00-00-00-01-00 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Button 8:
-01-00-08-00-00-00-00-00-00-00-00-01 // Click
-01-00-08-00-00-00-00-00-00-00-00-00 // Release
-
-Strip click 1:
-01-02-0E-00-01-01-68-00-34
-
-Strip click 2:
-01-02-0E-00-02-01-2D-01-50
-
-Strip click 3:
-01-02-0E-00-02-01-F2-01-21
-
-Strip click 4:
-01-02-0E-00-01-01-C8-02-24
-*/

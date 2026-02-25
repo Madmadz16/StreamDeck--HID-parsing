@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace StreamDeck__HID_parsing.UI
+namespace StreamDeck_HID_parsing.UI
 {
     internal class DialRenderer
     {

@@ -1,11 +1,19 @@
 ﻿using System;
+using System.Drawing;
+using StreamDeck_HID_parsing.UI;
 using StreamDeckCarControl.Hid;
+
 
 int VID = 0x0FD9;
 int PID = 0x0084;
 
 StreamDeckDevice deck = new StreamDeckDevice(VID, PID);
+deck.StartReading();
 
+var renderer = new KeyRenderer(deck);
+renderer.SetButtonImage(0, "Smiley.jpeg"); // set image on button 0
+
+/*
 // Subscribe to parser events
 deck.Parser.KnobRotated += (index, delta) =>
 {
@@ -35,9 +43,9 @@ deck.Parser.StripDragged += (x, y, OutX, OutY) =>
 {
     Console.WriteLine($"Drag started @ {x},{y}, ended @ {OutX},{OutY}");
 };
+*/
 
-deck.StartReading();
-
+Console.WriteLine("Images sent. Press Enter to exit...");
 // Keep console alive
-Console.WriteLine("Press Enter to exit...");
+// Console.WriteLine("Press Enter to exit...");
 Console.ReadLine();

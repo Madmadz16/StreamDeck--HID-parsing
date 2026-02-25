@@ -49,7 +49,11 @@
               "target": "Package",
               "version": "[2.6.4, )"
             },
-            "System.Net.Http.Json": {
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
+            "System.Drawing.Common": {
               "target": "Package",
               "version": "[10.0.3, )"
             }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StreamDeck+ HID parsing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca50d1c6b1526a42357b6ffdf0411a385055762d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d09922fba8217b89d00103d66a365e24de45a364")]
 [assembly: System.Reflection.AssemblyProductAttribute("StreamDeck+ HID parsing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StreamDeck+ HID parsing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
