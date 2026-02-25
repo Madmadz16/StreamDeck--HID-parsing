@@ -150,7 +150,6 @@ namespace StreamDeckCarControl.Hid
 
         private static int GetZoneIndex(int x, int zoneCount)
         {
-            Console.WriteLine($"{x}, {zoneCount}");
             if (zoneCount <= 1)
             {
                 return 0;

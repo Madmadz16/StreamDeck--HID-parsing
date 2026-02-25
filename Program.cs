@@ -11,7 +11,14 @@ StreamDeckDevice deck = new StreamDeckDevice(VID, PID);
 deck.StartReading();
 
 var renderer = new KeyRenderer(deck);
-renderer.SetButtonImage(0, "Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(0, "Images/Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(1, "Images/Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(2, "Images/Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(3, "Images/Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(4, "Images/Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(5, "Images/Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(6, "Images/Smiley.jpeg"); // set image on button 0
+renderer.SetButtonImage(7, "Images/Smiley.jpeg"); // set image on button 0
 
 /*
 // Subscribe to parser events

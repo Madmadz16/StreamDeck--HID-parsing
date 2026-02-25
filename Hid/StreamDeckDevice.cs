@@ -22,9 +22,11 @@ namespace StreamDeckCarControl.Hid
             _parser = new ReportParser();
 
             _device = DeviceList.Local
-                .GetHidDevices(vID)
-                .FirstOrDefault(d => d.ProductName.Contains("Stream Deck")) ?? throw new Exception("Stream Deck not found.");
-            
+                .GetHidDevices(vID, pID)
+                //.Where(d => d.GetMaxFeatureReportLength() == 1024) // classic button interface
+                .FirstOrDefault()
+                ?? throw new Exception("Stream Deck button interface not found.");
+
             if (!_device.TryOpen(out _stream))
                 throw new Exception("Failed to open Stream Deck device.");
         }
