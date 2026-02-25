@@ -20,6 +20,16 @@ renderer.SetButtonImage(5, "Images/Smiley.jpeg"); // set image on button 0
 renderer.SetButtonImage(6, "Images/Smiley.jpeg"); // set image on button 0
 renderer.SetButtonImage(7, "Images/Smiley.jpeg"); // set image on button 0
 
+var dialRenderer = new DialRenderer(deck);
+string[] images = new string[]
+{
+    @"Images/Smiley.jpeg",
+    @"Images/Smiley.jpeg",    
+    //@"Images/Smiley.jpeg",
+    @"Images/Smiley.jpeg"
+};
+dialRenderer.SendLcdImage("Images/Smiley.jpeg");
+
 /*
 // Subscribe to parser events
 deck.Parser.KnobRotated += (index, delta) =>

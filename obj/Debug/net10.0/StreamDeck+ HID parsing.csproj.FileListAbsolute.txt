@@ -65,3 +65,12 @@ C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\
 C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.genruntimeconfig.cache
 C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\ref\StreamDeck+ HID parsing.dll
 C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\Images\Smiley.jpeg
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\Images\2021.44.25-Automatic_Seat_Heaters.png
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\SkiaSharp.dll
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-arm64\native\libSkiaSharp.pdb
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x64\native\libSkiaSharp.pdb
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x86\native\libSkiaSharp.pdb
