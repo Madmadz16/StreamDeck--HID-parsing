@@ -1,28 +1,18 @@
-﻿﻿using System;
+﻿using System;
 
 namespace StreamDeckCarControl.Hid
 {
     public class ReportParser
     {
-        private readonly TouchStripParser _stripParser = new TouchStripParser();
-
-        private readonly bool[] _encoderPressed = new bool[4];
+        private readonly bool[] _knobPressed = new bool[4];
         private readonly bool[] _buttonPressed = new bool[8];
 
-        public event Action<int, int> EncoderRotated;
-        public event Action<int, bool> EncoderPressed;
+        public event Action<int, int> KnobRotated;
+        public event Action<int, bool> KnobPressed;
         public event Action<int, bool> ButtonPressed;
-        public event Action<int, int, int, int>? StripTapped;
-        public event Action<int, int, int>? StripDragged;
-        public event Action? StripReleased;
-
-        public ReportParser()
-        {
-            // Forward TouchStripParser events
-            _stripParser.StripTapped += (zone, x, y, z) => StripTapped?.Invoke(zone, x, y, z);
-            _stripParser.StripDragged += (x, y, z) => StripDragged?.Invoke(x, y, z);
-            _stripParser.StripReleased += () => StripReleased?.Invoke();
-        }
+        public event Action<int, int, int>? StripTapped;
+        public event Action<int, int, int>? StripLongPressed;
+        public event Action<int, int, int, int>? StripDragged;
 
         public void ParseReport(byte[] report)
         {
@@ -46,7 +36,9 @@ namespace StreamDeckCarControl.Hid
                     ParseButtons(report);
                     break;
                 case 0x02:
-                    _stripParser.ParseReport(report);
+                    ParseStrip(report);
+                    break;
+                default:
                     break;
             }
         }
@@ -66,60 +58,107 @@ namespace StreamDeckCarControl.Hid
         }
         private void ParseKnob(byte[] report)
         {
-            byte[] data = TrimBytes(report, 4);
-            if (data.Length == 0) return;
+            if (report == null || report.Length < 2) return;
 
-            int index = data.Length - 2;
-            // Click handling
-            if (data[0] == 0x00)
-            {
-                EncoderPressed?.Invoke(index, true);
-            } else {
-                // Rotation handling
-                if (data[^1] < 255/2)
+            // Log raw trimmed report
+            byte[] trimmedReport = [.. report
+                .Reverse()
+                .SkipWhile(b => b == 0x00)
+                .Reverse()];
+
+            int knobCount = _knobPressed.Length;
+
+            // Structure: [header 0-3][rotation/click byte 4][k0 5][k1 6][k2 7][k3 8]
+            if (report[4] == 0x00) {
+                for (int i = 0; i < knobCount; i++)
                 {
-                    EncoderRotated?.Invoke(index, data[^1]);
-                } else {
-                    EncoderRotated?.Invoke(index, data[^1]-256);
+                    // Knob values start at index 5
+                    bool pressed = (report.Length > 5 + i) && report[5 + i] != 0;
 
+                    // Fire event only if state changed
+                    if (_knobPressed[i] != pressed)
+                    {
+                        _knobPressed[i] = pressed;
+                        KnobPressed?.Invoke(i, pressed);
+                    }
                 }
+            } else {
+                // Rotation handling from byte 4
+                if (trimmedReport.Length <= 4) return;
+                
+                byte rotationByte = trimmedReport.Last();
+                int delta = rotationByte < 128 ? rotationByte : rotationByte - 256;
+
+                if (delta != 0)
+                {
+                    // Find which knob is being rotated based on pressed knob
+                    int index = trimmedReport.Length - 6;
+                    KnobRotated?.Invoke(index, delta);     
+                }
+                
             }
         }
 
         private void ParseButtons(byte[] report)
         {
-            // Get button data; empty array on release
-            byte[] data = TrimBytes(report, 4);
+            bool[] newStates = [.. report
+                .Skip(4)
+                .Take(8)
+                .Select(b => b != 0)];
 
-            // Count how many buttons were previously pressed
-            int pressedCount = _buttonPressed.Count(b => b);
-
-            if (data.Length == 0)
+            for (int i = 0; i < newStates.Length; i++)
             {
-                // Release report: trigger release for all pressed buttons
-                _buttonPressed
-                    .Select((pressed, index) => (pressed, index))
-                    .Where(x => x.pressed)
-                    .ToList()
-                    .ForEach(x =>
-                    {
-                        _buttonPressed[x.index] = false;
-                        ButtonPressed?.Invoke(x.index, false);
-                    });
+                bool oldState = _buttonPressed[i];
+                bool newState = newStates[i];
 
-                return;
+                if (oldState != newState)
+                {
+                    _buttonPressed[i] = newState;
+
+                    ButtonPressed?.Invoke(i, newState);
+                }
+            }
+        }
+        private void ParseStrip(byte[] report)
+        {
+            byte gesture = report[4];
+
+            int x = report[6] | (report[7] << 8);
+            int y = report[8] | (report[9] << 8);
+
+            int zoneCount = _knobPressed.Length;
+            int zone = GetZoneIndex(x, zoneCount);
+
+            switch (gesture)
+            {
+                case 1: // SHORT
+                    StripTapped?.Invoke(zone, x, y);
+                    break;
+
+                case 2: // LONG
+                    StripLongPressed?.Invoke(zone, x, y);
+                    break;
+
+                case 3: // DRAG
+                    int xOut = report[10] | (report[11] << 8);
+                    int yOut = report[12] | (report[13] << 8);
+                    int zoneOut = GetZoneIndex(xOut, zoneCount);
+                    StripDragged?.Invoke(x, y, yOut, yOut);
+                    break;
+            }
+        }
+
+        private static int GetZoneIndex(int x, int zoneCount)
+        {
+            Console.WriteLine($"{x}, {zoneCount}");
+            if (zoneCount <= 1)
+            {
+                return 0;
             }
 
-            // Press report: update state for each pressed button
-            data
-                .Select((value, index) => (value, index))
-                .Where(x => x.value != 0 && !_buttonPressed[x.index])
-                .ToList()
-                .ForEach(x =>
-                {
-                    _buttonPressed[x.index] = true;
-                    ButtonPressed?.Invoke(x.index, true);
-                });
+            const int maxCoord = 800;
+            int index = (int)((long)x * zoneCount / (maxCoord + 1));
+            return Math.Clamp(index, 0, zoneCount - 1);
         }
     }
 }

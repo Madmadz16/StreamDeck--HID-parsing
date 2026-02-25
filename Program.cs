@@ -7,14 +7,14 @@ int PID = 0x0084;
 StreamDeckDevice deck = new StreamDeckDevice(VID, PID);
 
 // Subscribe to parser events
-deck.Parser.EncoderRotated += (index, delta) =>
+deck.Parser.KnobRotated += (index, delta) =>
 {
-    Console.WriteLine($"Encoder {index} rotated {delta}");
+    Console.WriteLine($"Knob {index} rotated {delta}");
 };
 
-deck.Parser.EncoderPressed += (index, pressed) =>
+deck.Parser.KnobPressed += (index, pressed) =>
 {
-    Console.WriteLine($"Encoder {index} pressed: {pressed}");
+    Console.WriteLine($"Knob {index} pressed: {pressed}");
 };
 
 deck.Parser.ButtonPressed += (index, pressed) =>
@@ -22,19 +22,18 @@ deck.Parser.ButtonPressed += (index, pressed) =>
     Console.WriteLine($"Button {index} pressed: {pressed}");
 };
 
-deck.Parser.StripTapped += (zone, x, y, z) =>
+deck.Parser.StripTapped += (zone, x, y) =>
 {
-    Console.WriteLine($"Strip tapped at {x},{y} - zone {zone} (pressure {z})");
+    Console.WriteLine($"Short touch @ {x},{y},{zone}");
+};
+deck.Parser.StripLongPressed += (zone, x, y) =>
+{
+    Console.WriteLine($"Long touch @ {x},{y},{zone}");
 };
 
-deck.Parser.StripDragged += (x, y, z) =>
+deck.Parser.StripDragged += (x, y, OutX, OutY) =>
 {
-    Console.WriteLine($"Strip dragged at {x},{y} (pressure {z})");
-};
-
-deck.Parser.StripReleased += () =>
-{
-    Console.WriteLine("Strip released");
+    Console.WriteLine($"Drag started @ {x},{y}, ended @ {OutX},{OutY}");
 };
 
 deck.StartReading();
