@@ -40,37 +40,24 @@ C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/obj/
 /home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/System.Private.Windows.GdiPlus.dll
 /home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/runtimes/win/lib/net10.0/Microsoft.Win32.SystemEvents.dll
 /home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/SixLabors.ImageSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.exe
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.deps.json
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.runtimeconfig.json
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\StreamDeck+ HID parsing.pdb
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\HidSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\SixLabors.ImageSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\System.Drawing.Common.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\System.Private.Windows.Core.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\System.Private.Windows.GdiPlus.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win\lib\net10.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.csproj.AssemblyReference.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.AssemblyInfoInputs.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.AssemblyInfo.cs
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.csproj.CoreCompileInputs.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.sourcelink.json
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDe.910CB6ED.Up2Date
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\refint\StreamDeck+ HID parsing.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.pdb
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\StreamDeck+ HID parsing.genruntimeconfig.cache
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\obj\Debug\net10.0\ref\StreamDeck+ HID parsing.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\Images\Smiley.jpeg
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\Images\2021.44.25-Automatic_Seat_Heaters.png
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\SkiaSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\osx\native\libSkiaSharp.dylib
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-arm64\native\libSkiaSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-arm64\native\libSkiaSharp.pdb
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x64\native\libSkiaSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x64\native\libSkiaSharp.pdb
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x86\native\libSkiaSharp.dll
-C:\Users\mftha\source\repos\StreamDeck+ HID parsing\StreamDeck+ HID parsing\bin\Debug\net10.0\runtimes\win-x86\native\libSkiaSharp.pdb
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/Microsoft.Win32.SystemEvents.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/SixLabors.ImageSharp.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/System.Drawing.Common.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/System.Private.Windows.Core.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/System.Private.Windows.GdiPlus.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/win/lib/net10.0/Microsoft.Win32.SystemEvents.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/Images/Smiley.jpeg
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/Images/2021.44.25-Automatic_Seat_Heaters.png
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/SkiaSharp.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/osx/native/libSkiaSharp.dylib
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/win-arm64/native/libSkiaSharp.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/win-arm64/native/libSkiaSharp.pdb
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/win-x64/native/libSkiaSharp.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/win-x64/native/libSkiaSharp.pdb
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/win-x86/native/libSkiaSharp.dll
+C:/Users/mftha/source/repos/StreamDeck+ HID parsing/StreamDeck+ HID parsing/bin/Debug/net10.0/runtimes/win-x86/native/libSkiaSharp.pdb
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/Images/2021.44.25-Automatic_Seat_Heaters.png
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/Images/Smiley.jpeg
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/SixLabors.Fonts.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/SixLabors.ImageSharp.Drawing.dll
+/home/madmadz16/Programing/HomeProjects/StreamDeck--HID-parsing/bin/Debug/net10.0/Images/Smiley2.jpeg

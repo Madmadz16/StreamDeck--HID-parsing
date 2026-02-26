@@ -1,8 +1,11 @@
 ﻿using System;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Formats.Jpeg;
 using StreamDeckCarControl.Hid;
+using SixLabors.ImageSharp.Drawing.Processing;
 
 namespace StreamDeck_HID_parsing.UI
 {
@@ -10,64 +13,99 @@ namespace StreamDeck_HID_parsing.UI
     {
         private readonly StreamDeckDevice _deckDevice;
 
-        // Packet sizes matching Python library
-        private const int ImgPacketLen = 1024;
-        private const int LcdPacketHeader = 16;
-        private const int LcdPacketPayloadLen = ImgPacketLen - LcdPacketHeader;
+        // Make these class-level so UpdateSingleImage can use them
+        private readonly int canvasWidth = 800;
+        private readonly int canvasHeight = 100;
+        private readonly int imgWidth;
+        private readonly int padding;
 
-        // LCD command for setting image
-        private const byte CmdSetLcdImage = 0x02;
-
-        public DialRenderer(StreamDeckDevice device)
+        public DialRenderer(StreamDeckDevice device, int padding = 2)
         {
             _deckDevice = device ?? throw new ArgumentNullException(nameof(device));
+            this.padding = padding;
+            this.imgWidth = (canvasWidth - padding * 3) / 4;
         }
 
-        /// <summary>
-        /// Send a single JPEG image to the LCD.
-        /// The image is resized to 800x100 and sent in 1024-byte HID packets.
-        /// </summary>
-        public void SendLcdImage(string filePath)
+        public void SendFourImages(string[] imagePaths)
         {
-            byte[] jpegBytes = LoadAndConvertToJpeg(filePath, 800, 100);
-            SendImageChunks(jpegBytes);
-        }
+            if (imagePaths.Length != 4)
+                throw new ArgumentException("Exactly 4 images are required.", nameof(imagePaths));
 
-        private byte[] LoadAndConvertToJpeg(string filePath, int width, int height)
-        {
-            using var bmp = new Bitmap(filePath);
-            using var resized = new Bitmap(bmp, width, height);
-            using var ms = new MemoryStream();
-            resized.Save(ms, ImageFormat.Jpeg);
-            return ms.ToArray();
-        }
+            using Image<Rgba32> canvas = new Image<Rgba32>(canvasWidth, canvasHeight, Color.Black);
 
-        private void SendImageChunks(byte[] imageData)
-        {
-            int reportLen = _deckDevice.Device.GetMaxOutputReportLength();
-            int payloadPerChunk = reportLen - 16; // 16-byte LCD header
-            byte reportId = 0x01;
-
-            int totalChunks = (int)Math.Ceiling(imageData.Length / (double)payloadPerChunk);
-
-            for (int chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++)
+            for (int i = 0; i < 4; i++)
             {
-                int offset = chunkIndex * payloadPerChunk;
-                int bytesInChunk = Math.Min(payloadPerChunk, imageData.Length - offset);
+                int xPos = i * (imgWidth + padding);
 
-                byte[] packet = new byte[reportLen];
-                packet[0] = reportId;           // Report ID
-                packet[1] = CmdSetLcdImage;     // LCD command
-                packet[2] = (byte)(chunkIndex & 0xFF);
-                packet[3] = (byte)(totalChunks & 0xFF);
-                packet[4] = (byte)((bytesInChunk >> 8) & 0xFF);
-                packet[5] = (byte)(bytesInChunk & 0xFF);
-                // bytes 6..15 = 0 (padding)
+                if (string.IsNullOrEmpty(imagePaths[i]))
+                {
+                    canvas.Mutate(ctx => ctx.Fill(Color.Black, new Rectangle(xPos, 0, imgWidth, canvasHeight)));
+                }
+                else
+                {
+                    if (!File.Exists(imagePaths[i]))
+                        throw new FileNotFoundException("Image not found", imagePaths[i]);
 
-                Array.Copy(imageData, offset, packet, 16, bytesInChunk);
+                    using Image<Rgba32> img = Image.Load<Rgba32>(imagePaths[i]);
+                    img.Mutate(x => x.Resize(imgWidth, canvasHeight));
+                    canvas.Mutate(ctx => ctx.DrawImage(img, new Point(xPos, 0), 1f));
+                }
+            }
 
+            SendImageToLcd(canvas, 0, 0);
+        }
+
+        public void UpdateSingleImage(int index, string imagePath)
+        {
+            int xPos = index * (imgWidth + padding);
+
+            using Image<Rgba32> section = new Image<Rgba32>(imgWidth, canvasHeight);
+
+            if (string.IsNullOrEmpty(imagePath) || !File.Exists(imagePath))
+            {
+                section.Mutate(ctx => ctx.Fill(Color.Black));
+            }
+            else
+            {
+                using Image<Rgba32> img = Image.Load<Rgba32>(imagePath);
+                img.Mutate(x => x.Resize(imgWidth, canvasHeight));
+                section.Mutate(ctx => ctx.DrawImage(img, new Point(0, 0), 1f));
+            }
+
+            SendImageToLcd(section, xPos, 0);
+        }
+
+        private void SendImageToLcd(Image<Rgba32> image, int xOffset, int yOffset)
+        {
+            using MemoryStream ms = new MemoryStream();
+            image.Save(ms, new JpegEncoder { Quality = 90 });
+            byte[] jpegBytes = ms.ToArray();
+
+            int pageNumber = 0;
+            int offset = 0;
+            const int payloadSize = 1008;
+
+            while (offset < jpegBytes.Length)
+            {
+                int bytesToSend = Math.Min(payloadSize, jpegBytes.Length - offset);
+                bool isLast = (offset + bytesToSend) >= jpegBytes.Length;
+
+                byte[] packet = new byte[1024];
+                packet[0] = 0x02; // Command ID
+                packet[1] = 0x0c; // Command Type
+                BitConverter.GetBytes((short)xOffset).CopyTo(packet, 2);
+                BitConverter.GetBytes((short)yOffset).CopyTo(packet, 4);
+                BitConverter.GetBytes((short)image.Width).CopyTo(packet, 6);
+                BitConverter.GetBytes((short)image.Height).CopyTo(packet, 8);
+                packet[10] = isLast ? (byte)1 : (byte)0;
+                BitConverter.GetBytes((short)pageNumber).CopyTo(packet, 11);
+                BitConverter.GetBytes((short)bytesToSend).CopyTo(packet, 13);
+
+                Array.Copy(jpegBytes, offset, packet, 16, bytesToSend);
                 _deckDevice.Stream.Write(packet, 0, packet.Length);
-                Thread.Sleep(2);
+
+                offset += bytesToSend;
+                pageNumber++;
             }
         }
     }

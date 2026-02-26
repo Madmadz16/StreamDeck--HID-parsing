@@ -42,20 +42,6 @@ namespace StreamDeckCarControl.Hid
                     break;
             }
         }
-
-        private static byte[] TrimBytes(byte[] report, int headerLength) {
-            if (report == null || report.Length == 0)
-                return [];
-
-            byte[] trimmed = [.. report.Reverse()
-                .SkipWhile(b => b == 0x00)
-                .Reverse()];
-
-            // Need at least 5 bytes to have data after skipping the header (01-03-05-00)
-            if (trimmed.Length < headerLength) return [];
-
-            return trimmed[headerLength..];
-        }
         private void ParseKnob(byte[] report)
         {
             if (report == null || report.Length < 2) return;
